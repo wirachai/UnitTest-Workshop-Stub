@@ -2,7 +2,7 @@
 
 namespace WorkshopStub.Repositories
 {
-    public class ItemRepository
+    public class ItemRepository : IItemRepository
     {
         public ItemModel Get(string itemId)
         {

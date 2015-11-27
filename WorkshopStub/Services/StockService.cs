@@ -4,14 +4,14 @@ namespace WorkshopStub.Services
 {
     public class StockService
     {
-        public ItemRepository ItemRepository { get; set; }
+        public IItemRepository ItemRepository { get; set; }
 
         public StockService()
         {
             ItemRepository = new ItemRepository();
         }
 
-        public StockService(ItemRepository itemRepo)
+        public StockService(IItemRepository itemRepo)
         {
             ItemRepository = itemRepo;
         }
