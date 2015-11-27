@@ -43,7 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IItemRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
-    <Compile Include="Repositories\ItemRepository_Stub.cs" />
     <Compile Include="Services\StockService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

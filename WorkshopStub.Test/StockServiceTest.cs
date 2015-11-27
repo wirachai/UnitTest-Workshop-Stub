@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using WorkshopStub.Repositories;
 using WorkshopStub.Services;
 
@@ -35,12 +36,12 @@ namespace WorkshopStub.Test
 
         private StockService SetUpServiceWithStub(int quantity)
         {
-            var stub = new ItemRepository_Stub();
-            stub.ReturnObject = new Models.ItemModel() { Quantity = quantity };
+            var stub = new Mock<IItemRepository>();
+            stub.Setup(x => x.Get("Some Id"))
+                .Returns(new Models.ItemModel() { Quantity = quantity });
 
-            StockService service = new StockService(stub);
+            StockService service = new StockService(stub.Object);
             return service;
         }
-
     }
 }
